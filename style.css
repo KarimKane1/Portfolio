@@ -1,0 +1,390 @@
+/*
+  style.css
+
+  This file includes:
+  - Dark/Light theme variables
+  - Basic resets
+  - Header & nav styling
+  - Hero & wave divider
+  - Container & section styles
+  - Two-column "About Me" layout
+  - Card & grid styles
+  - Skills/logos section
+  - Footer
+*/
+
+/* ===================== THEME VARIABLES ===================== */
+
+/* ========== DEFAULT (DARK THEME) ========== */
+:root {
+    --bg-color: #16181D;         /* Dark background */
+    --card-bg: #21252B;          /* Slightly lighter background for cards/sections */
+    --text-color: #F5F5F5;       /* Light text */
+    --heading-color: #86E1FC;    /* Aqua for headings */
+    --primary-color: #86E1FC;    /* Same aqua accent for primary actions */
+    --secondary-color: #C678DD;  /* Violet accent on hover or secondary elements */
+    --overlay-color: rgba(0, 0, 0, 0.6);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+  
+    /* Wave divider color for dark theme, if used */
+    --wave-divider-color: #21252B;
+  }
+  
+  /* ========== LIGHT THEME (WHEN body.light) ========== */
+  body.light {
+    --bg-color: #F8F9FB;         /* Light background */
+    --card-bg: #FFFFFF;          /* White card background */
+    --text-color: #2D2F33;       /* Dark text */
+    --heading-color: #007BFF;    /* Bright blue for headings */
+    --primary-color: #007BFF;    /* Same bright blue for primary actions */
+    --secondary-color: #C678DD;  /* Keep violet accent */
+    --overlay-color: rgba(255, 255, 255, 0.5);
+    --card-shadow: rgba(0, 0, 0, 0.1);
+  
+    /* Wave divider color for light theme, if used */
+    --wave-divider-color: #E9ECEF;
+  }
+  
+  /* ===================== GLOBAL RESET & BASE ===================== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* ===================== HEADER & NAV ===================== */
+  header {
+    background: var(--card-bg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--card-shadow);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* THEME TOGGLE BUTTON */
+  .toggle-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-left: 20px;
+  }
+  
+  .toggle-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  
+  /* ===================== HERO SECTION ===================== */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    /* A diagonal gradient going from top-left (dark) to bottom-right (lighter) */
+    background: linear-gradient(135deg, #1f2937 0%, #2d3748 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px; /* For your fixed header */
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* A subtle overlay to unify the gradient and ensure text stands out */
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-content {
+    position: relative;
+    max-width: 800px;
+    text-align: center;
+    z-index: 2;
+    color: #fff; /* Keep hero text white for contrast */
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* ===================== WAVE DIVIDER ===================== */
+  .wave-divider {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--wave-divider-color);
+  }
+  
+  /* ===================== CONTAINER & SECTIONS ===================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 60px;
+  }
+  
+  section {
+    margin-bottom: 60px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+  }
+  
+  /* ===================== ABOUT SECTION (TWO-COLUMN) ===================== */
+  .about-section {
+    display: grid;
+    /* Automatically size each column based on content, then center them */
+    grid-template-columns: auto auto;
+    gap: 40px;
+    justify-content: center; /* Center columns horizontally in the container */
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  
+  /* Keep the text left-aligned or change to center if you prefer */
+  .about-text {
+    text-align: left; /* or center if you want to center the text */
+  }
+  
+  .about-photo img {
+    width: 100%;
+    max-width: 300px; /* Limit the portrait width so it doesn't dominate */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px var(--card-shadow);
+  }
+  
+  /* ===================== GRID & CARD STYLES ===================== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--card-shadow);
+  }
+  
+  .card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  /* ===================== BUTTON STYLES ===================== */
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+  }
+  
+  .btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  /* ===================== SKILLS / LOGOS SECTION ===================== */
+  .section-alt {
+    background: var(--card-bg);
+    padding: 60px 20px;
+    color: var(--text-color);
+    margin-bottom: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+  }
+  
+  .skills-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .skills-logos img {
+    max-width: 120px;
+    transition: transform 0.3s ease;
+  }
+  
+  .skills-logos img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ===================== EXPERIENCE PAGE BLOCKS (OPTIONAL) ===================== */
+  .experience-block {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px var(--card-shadow);
+  }
+  
+  .experience-block h2 {
+    margin-bottom: 10px;
+    color: var(--heading-color);
+    font-size: 1.8rem;
+  }
+  
+  .experience-block h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+  }
+  
+  .experience-content {
+    margin-bottom: 15px;
+  }
+  
+  .experience-content p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  /* ADDING INDENTATION FOR BULLETS */
+  .experience-content ul {
+    list-style: disc outside;
+    margin-left: 1.5em;  /* Indent from the left */
+    padding-left: 1.5em; /* Additional padding for bullet spacing */
+  }
+  
+  .experience-divider {
+    margin: 40px 0;
+    border-top: 2px solid var(--primary-color);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ===================== FOOTER ===================== */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--card-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    margin-top: 40px;
+  }
+
+
+
+/* Award Blocks: Two-Column Layout */
+.award-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Image column is 1fr, text column is 2fr */
+    gap: 20px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--card-shadow);
+    padding: 20px;
+    margin-bottom: 40px;
+    align-items: center; /* Vertically center the content */
+  }
+  
+  .award-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px var(--card-shadow);
+  }
+  
+  .award-text h2 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+  }
+  
+  .award-text p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  
+  
