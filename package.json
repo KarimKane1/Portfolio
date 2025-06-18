@@ -4,10 +4,10 @@
   "description": "Karim Kane's Professional Portfolio",
   "main": "index.html",
   "scripts": {
-    "dev": "npx serve -s . -l 3000",
-    "start": "npx serve -s . -l 3000",
+    "dev": "npx serve . -p 3000",
+    "start": "npx serve . -p 3000",
     "build": "echo 'Static site - no build needed'",
-    "preview": "npx serve -s . -l 4173"
+    "preview": "npx serve . -p 4173"
   },
   "keywords": ["portfolio", "static-site"],
   "author": "Karim Kane",
