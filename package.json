@@ -4,10 +4,10 @@
   "description": "Karim Kane's Professional Portfolio",
   "main": "index.html",
   "scripts": {
-    "dev": "python3 -m http.server 3000",
-    "start": "python3 -m http.server 3000",
+    "dev": "npx serve -s . -l 3000",
+    "start": "npx serve -s . -l 3000",
     "build": "echo 'Static site - no build needed'",
-    "preview": "python3 -m http.server 4173"
+    "preview": "npx serve -s . -l 4173"
   },
   "keywords": ["portfolio", "static-site"],
   "author": "Karim Kane",
