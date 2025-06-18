@@ -4,149 +4,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Karim's Portfolio | Home</title>
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header & Nav -->
+  <!-- Header & Navigation -->
   <header>
-    <div class="logo">
-      <a href="index.html">Karim's Portfolio</a>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Karim Kane</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="rowing.html">Rowing</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="awards.html">Awards</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="rowing.html">Rowing</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to my Portfolio!</h1>
-      <p>
-        Hello, I'm Karim—Northeastern University honors student, Division 1
-        rowing athlete, and industrial engineering major.
-      </p>
-      <a href="#overview" class="btn">Learn More</a>
+    <div class="container">
+      <div class="hero-content fade-in-up">
+        <h1>Welcome to my Portfolio!</h1>
+        <p>
+          Hello, I'm Karim—Northeastern University honors student, Division 1
+          rowing athlete, and industrial engineering major.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="experience.html" class="btn btn-secondary">View Experience</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Wave Divider -->
-  <div class="wave-divider">
-    <!-- Inline SVG for wave shape; you can replace with your own shape or color -->
-    <svg
-      viewBox="0 0 1440 320"
-      preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0,224L48,224C96,224,192,224,288,213.3C384,203,480,181,576,165.3C672,149,768,139,864,133.3C960,128,1056,128,1152,133.3C1248,139,1344,149,1392,154.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-      ></path>
-    </svg>
-  </div>
-
   <!-- Main Content -->
-  <div class="container" id="overview">
-    <!-- About Section (Two-Column Layout) -->
-    <section class="about-section">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>
-          I'm a Northeastern University honors student, Division 1 rowing
-          athlete, and industrial engineering major. Over the course of my
-          studies, I've had the opportunity to complete four internships in
-          biotech, engineering materials, themed entertainment, and real
-          estate. At Ginkgo Bioworks, Rogers Corporation, Walt Disney World,
-          and Greystar through Project Destined, I gained hands-on experience
-          in innovation, market research, operations, and financial analysis.
-        </p>
-        <p>
-          Outside of academics and work, I'm passionate about promoting
-          diversity in rowing as a member of the Most Beautiful Thing Inclusion
-          Fund. I'm also proud to have been named an IRCA Scholar-Athlete,
-          which recognizes my dedication to both rowing and my studies.
-        </p>
-      </div>
-      <div class="about-photo">
-        <!-- Replace 'Karim-Portrait.jpg' with the actual file name -->
-        <img src="images/Karim-Head-Shot.jpg" alt="Portrait of Karim" />
+  <div class="container">
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="about-section fade-in-up">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I'm a Northeastern University honors student, Division 1 rowing
+            athlete, and industrial engineering major. Over the course of my
+            studies, I've had the opportunity to complete four internships in
+            biotech, engineering materials, themed entertainment, and real
+            estate. At Ginkgo Bioworks, Rogers Corporation, Walt Disney World,
+            and Greystar through Project Destined, I gained hands-on experience
+            in innovation, market research, operations, and financial analysis.
+          </p>
+          <p>
+            Outside of academics and work, I'm passionate about promoting
+            diversity in rowing as a member of the Most Beautiful Thing Inclusion
+            Fund. I'm also proud to have been named an IRCA Scholar-Athlete,
+            which recognizes my dedication to both rowing and my studies.
+          </p>
+        </div>
+        <div class="about-photo">
+          <img src="images/Karim-Head-Shot.jpg" alt="Portrait of Karim" />
+        </div>
       </div>
     </section>
 
-    <!-- Featured Experiences (Brief) -->
-    <section>
-      <h2>Featured Experiences</h2>
+    <!-- Featured Experiences -->
+    <section class="section-sm">
+      <h2 class="text-center mb-8">Featured Experiences</h2>
       <div class="grid">
-        <div class="card">
+        <div class="card fade-in-up">
           <h3>Walt Disney World</h3>
-          <p>Industrial Engineering Intern</p>
+          <p><strong>Industrial Engineering Intern</strong></p>
           <p>
             Optimized food and beverage operations to enhance guest
-            experiences.
+            experiences through data analysis and process improvement.
           </p>
-          <a href="experience.html" class="btn">View Work</a>
+          <a href="experience.html" class="btn btn-primary">View Details</a>
         </div>
-        <div class="card">
+        <div class="card fade-in-up">
           <h3>Rogers Corporation</h3>
-          <p>Market Research Intern</p>
+          <p><strong>Market Research Intern</strong></p>
           <p>
-            Analyzed industry trends and provided insights for strategic
-            decision-making.
+            Analyzed industry trends and provided strategic insights for
+            business expansion and market opportunities.
           </p>
-          <a href="experience.html" class="btn">View Project</a>
+          <a href="experience.html" class="btn btn-primary">View Details</a>
         </div>
-        <div class="card">
+        <div class="card fade-in-up">
           <h3>Ginkgo Bioworks</h3>
-          <p>Analyst Intern</p>
+          <p><strong>Analyst Intern</strong></p>
           <p>
-            Contributed to lab management and innovation through data analysis.
+            Contributed to lab management and innovation through comprehensive
+            data analysis and reporting systems.
           </p>
-          <a href="experience.html" class="btn">View Project</a>
+          <a href="experience.html" class="btn btn-primary">View Details</a>
         </div>
       </div>
     </section>
 
-    <!-- Skills / Logos Section -->
-    <section class="section-alt">
+    <!-- Skills & Technologies -->
+    <section class="skills-section fade-in-up">
       <h2>Tools & Technologies</h2>
       <p>
         Below are some of the tools, platforms, and technologies I've worked
         with during my internships and projects.
       </p>
       <div class="skills-logos">
-        <img src="images/PowerBi-Logo.png" alt="Power BI Logo" />
-        <img src="images/Tableau-Emblem.png" alt="Tableau Logo" />
-        <img src="images/Python-Logo.png" alt="Python Logo" />
-        <img src="images/SQL-Logo.png" alt="SQL Logo" />
+        <img src="images/PowerBi-Logo.png" alt="Power BI" />
+        <img src="images/Tableau-Emblem.png" alt="Tableau" />
+        <img src="images/Python-Logo.png" alt="Python" />
+        <img src="images/SQL-Logo.png" alt="SQL" />
       </div>
     </section>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>Contact: <a href="mailto:kane.mo@northeastern.edu">karim@example.com</a></p>
-    <div class="footer-social">
-      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <span class="linkedin-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+    <div class="container">
+      <p>Contact: <a href="mailto:kane.mo@northeastern.edu">karim@example.com</a></p>
+      <div class="footer-social">
+        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
             <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/>
           </svg>
-        </span>
-      </a>
+        </a>
+      </div>
+      <p>&copy; 2025 Karim Kane. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>

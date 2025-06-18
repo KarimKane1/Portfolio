@@ -4,99 +4,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Karim's Portfolio | Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header & Nav -->
+  <!-- Header & Navigation -->
   <header>
-    <div class="logo"><a href="index.html">Karim's Portfolio</a></div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="awards.html">Awards</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="rowing.html">Rowing</a></li>
-      </ul>
-    </nav>
-    <button id="theme-toggle" class="toggle-btn">Toggle Theme</button>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Karim Kane</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="rowing.html">Rowing</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="subpage-hero-content">
+        <h1>Major Projects</h1>
+        <p>Explore my academic and technical projects</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
   <div class="container">
-    <h1>Major Projects</h1>
-    <div class="grid">
-      <div class="card">
-        <h3>Capstone Project</h3>
-        <p>This project involved [describe the goal, technologies used, and outcomes]. More details coming soon!</p>
-        <a href="#" class="btn">Learn More</a>
+    <section class="section">
+      <!-- Project Overview Cards -->
+      <div class="grid mb-8">
+        <div class="card fade-in-up">
+          <h3>Capstone Project</h3>
+          <p>Predictive maintenance system for manufacturing equipment using machine learning and sensor data analysis.</p>
+          <a href="#capstone" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card fade-in-up">
+          <h3>Database Course Project</h3>
+          <p>Full-stack application for a shared customer rewards program connecting local coffee shops.</p>
+          <a href="#database" class="btn btn-primary">Learn More</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Database Course Project</h3>
-        <p>This project focused on [describe the objective, tools used, and impact]. More details coming soon!</p>
-        <a href="#" class="btn">Learn More</a>
+
+      <!-- Detailed Project Sections -->
+      <div id="capstone">
+        <h2>Capstone Project: Predictive Maintenance for Manufacturing</h2>
+        <div class="project-card fade-in-up">
+          <div class="project-description">
+            <p><strong>Overview:</strong>  
+              As part of my senior capstone in Industrial Engineering at Northeastern University, I worked on a project focused on predicting machine failure in milling machines. Our goal was to reduce unplanned downtime by using sensor data to anticipate when and how machines might fail.
+            </p>
+            <p><strong>What I Contributed:</strong>  
+              I helped design and implement a predictive system that used historical sensor data to estimate both the <em>time to failure (TTF)</em> and the <em>type of failure</em> for each machine. I was involved in data cleaning, model development, and dashboard visualization.
+            </p>
+            <p><strong>Tools & Technologies:</strong>  
+              Python (DeepHit model), PostgreSQL for database management, Tableau for dashboard creation, and Excel for data exploration.
+            </p>
+            <p><strong>Key Features:</strong>  
+              A survival analysis model that predicts failure time and type, a structured PostgreSQL database, and a Tableau dashboard to visualize machine status and trends.
+            </p>
+            <p><strong>Impact:</strong>  
+              The solution helped stakeholders visualize potential failures and improve maintenance scheduling, with strong potential for cost savings and seamless integration into real operations.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div id="database">
+        <h2>CafeCoin Collective: A Shared Rewards Platform for Local Coffee Shops</h2>
+        <div class="project-card fade-in-up">
+          <div class="project-description">
+            <p><strong>Project Overview:</strong>  
+              As part of my ongoing CS 3200: Database Design course at Northeastern University, my team is currently building <em>CafeCoin Collective</em>, a full-stack data-driven application designed to support a shared customer rewards program for local coffee shops. The goal is to give small, independent cafés the ability to reward loyal customers and remain competitive with larger chains by participating in a unified rewards ecosystem.
+            </p>
+            <p><strong>Key Features (in development):</strong>  
+              Coffee shop owners will be able to register their stores into the CafeCoin network. Customers will earn "CafeCoins" by visiting participating shops and redeem them across the network. Shop owners will be able to view engagement insights, while admins will manage analytics and system-wide performance.
+            </p>
+            <p><strong>Tools & Technologies:</strong>  
+              MySQL for database design, Python + Flask for building the RESTful API, and Streamlit (planned) for the user interface. The full stack is deployed in Docker containers for consistency across development.
+            </p>
+            <p><strong>System Architecture:</strong>  
+              The application includes three primary components: a MySQL database server, a Flask API for the backend logic and data access layer, and a Streamlit-based UI currently under development.
+            </p>
+            <p><strong>Status:</strong>  
+              The project is actively in development during Spring 2025. We're completing our ER models and schema, building out the database, and progressing toward API and frontend implementation. CafeCoin Collective highlights collaborative design and end-to-end development of a scalable data-driven system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-
-
-  <section>
-    <h2>Capstone Project: Predictive Maintenance for Manufacturing</h2>
-    <div class="project-card">
-      <div class="project-description">
-        <p><strong>Overview:</strong>  
-          As part of my senior capstone in Industrial Engineering at Northeastern University, I worked on a project focused on predicting machine failure in milling machines. Our goal was to reduce unplanned downtime by using sensor data to anticipate when and how machines might fail.
-        </p>
-        <p><strong>What I Contributed:</strong>  
-          I helped design and implement a predictive system that used historical sensor data to estimate both the <em>time to failure (TTF)</em> and the <em>type of failure</em> for each machine. I was involved in data cleaning, model development, and dashboard visualization.
-        </p>
-        <p><strong>Tools & Technologies:</strong>  
-          Python (DeepHit model), PostgreSQL for database management, Tableau for dashboard creation, and Excel for data exploration.
-        </p>
-        <p><strong>Key Features:</strong>  
-          A survival analysis model that predicts failure time and type, a structured PostgreSQL database, and a Tableau dashboard to visualize machine status and trends.
-        </p>
-        <p><strong>Impact:</strong>  
-          The solution helped stakeholders visualize potential failures and improve maintenance scheduling, with strong potential for cost savings and seamless integration into real operations.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>CafeCoin Collective: A Shared Rewards Platform for Local Coffee Shops</h2>
-    <div class="project-card">
-      <div class="project-description">
-        <p><strong>Project Overview:</strong>  
-          As part of my ongoing CS 3200: Database Design course at Northeastern University, my team is currently building <em>CafeCoin Collective</em>, a full-stack data-driven application designed to support a shared customer rewards program for local coffee shops. The goal is to give small, independent cafés the ability to reward loyal customers and remain competitive with larger chains by participating in a unified rewards ecosystem.
-        </p>
-        <p><strong>Key Features (in development):</strong>  
-          Coffee shop owners will be able to register their stores into the CafeCoin network. Customers will earn “CafeCoins” by visiting participating shops and redeem them across the network. Shop owners will be able to view engagement insights, while admins will manage analytics and system-wide performance.
-        </p>
-        <p><strong>Tools & Technologies:</strong>  
-          MySQL for database design, Python + Flask for building the RESTful API, and Streamlit (planned) for the user interface. The full stack is deployed in Docker containers for consistency across development.
-        </p>
-        <p><strong>System Architecture:</strong>  
-          The application includes three primary components: a MySQL database server, a Flask API for the backend logic and data access layer, and a Streamlit-based UI currently under development.
-        </p>
-        <p><strong>Status:</strong>  
-          The project is actively in development during Spring 2025. We’re completing our ER models and schema, building out the database, and progressing toward API and frontend implementation. CafeCoin Collective highlights collaborative design and end-to-end development of a scalable data-driven system.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  
-
 
   <!-- Footer -->
   <footer>
-    <p>Contact: <a href="mailto:kane.mo@northeastern.edu">karim@example.com</a></p>
+    <div class="container">
+      <p>Contact: <a href="mailto:kane.mo@northeastern.edu">karim@example.com</a></p>
+      <div class="footer-social">
+        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M19 0h-14c-2.76 0-5 2.24-5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/>
+          </svg>
+        </a>
+      </div>
+      <p>&copy; 2025 Karim Kane. All rights reserved.</p>
+    </div>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
-
-

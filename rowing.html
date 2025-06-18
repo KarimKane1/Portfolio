@@ -1,87 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Karim's Portfolio | Rowing</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  
-
-  <!-- Header & Nav -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karim's Portfolio | Rowing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header & Navigation -->
   <header>
-    <div class="logo"><a href="index.html">Karim's Portfolio</a></div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="awards.html">Awards</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="rowing.html">Rowing</a></li>
-      </ul>
-    </nav>
-    <button id="theme-toggle" class="toggle-btn">Toggle Theme</button>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Karim Kane</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="rowing.html" class="active">Rowing</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
-<section>
-    <h2>My Rowing Journey</h2>
-  
-    <!-- Section 1: Northeastern Career -->
-    <div class="experience-block">
-      <h3>Division I Rowing at Northeastern University</h3>
-      <p>
-        I rowed for four years as a Division I athlete at Northeastern University. My journey began with a standout freshman year, culminating in a <strong>4th place finish at the IRA National Championships</strong>. Throughout my college career, I trained and competed at the highest collegiate level, balancing early-morning practices and full-time coursework as a committed student-athlete.
-      </p>
-      <p>
-        I also served as the team’s <strong>Student-Athlete Advisory Committee (SAAC) representative</strong>. In this role, I acted as the bridge between my teammates and the athletic department—representing athlete voices, supporting well-being initiatives, and collaborating on university-wide athletic programming.
-      </p>
-      <div class="rowing-gallery">
-        <img src="images/northeastern-1.jpg" alt="Northeastern Rowing" />
-        <img src="images/northeastern-2.jpg" alt="Rowing at IRA Nationals" />
-      </div>
-    </div>
-  
-    <!-- Section 2: A Most Beautiful Thing Inclusion Fund -->
-    <div class="experience-block">
-      <h3>Ambassador – A Most Beautiful Thing Inclusion Fund</h3>
-      <p>
-        I’m proud to be an ambassador for the <strong>A Most Beautiful Thing Inclusion Fund</strong>, an organization that uses rowing to empower youth, promote racial equity, and expand access to the sport. The fund supports athletes of color through scholarships, equipment, and programming that break down longstanding barriers to entry.
-      </p>
-      <p>
-        As part of this work, I had the honor of rowing in one of the <strong>first all-Black 8+ crews to race at the Head of the Charles Regatta</strong>—one of the largest and most prestigious rowing events in the world. Competing on this stage alongside fellow Black athletes was a powerful moment that celebrated visibility, history, and progress in the sport.
-      </p>
-      <div class="rowing-gallery">
-        <img src="images/charles-black8.jpg" alt="All-Black 8+ at Head of the Charles" />
-        <img src="images/ambassador-event.jpg" alt="AMBTF Community Event" />
-      </div>
-    </div>
-  
-    <!-- Section 3: Rowing in Senegal -->
-    <div class="experience-block">
-      <h3>Bringing Rowing to Senegal</h3>
-      <p>
-        Rowing does not yet exist in Senegal—but I hope to change that. As someone originally from Dakar, I dream of helping launch the <strong>country’s first national rowing program</strong>.
-      </p>
-      <p>
-        Thanks to a generous donation from the <strong>international rowing community</strong> (with support from World Rowing and affiliated organizations), the first equipment has already been secured. The ultimate goal is to establish a pipeline for Senegalese youth to explore rowing as a pathway to health, education, and international competition.
-      </p>
-      <div class="rowing-gallery">
-        <img src="images/senegal-vision.jpg" alt="Rowing vision in Senegal" />
-        <img src="images/senegal-boats.jpg" alt="Rowing equipment for Senegal" />
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="subpage-hero-content">
+        <h1>My Rowing Journey</h1>
+        <p>From Division I competition to global impact and community building</p>
       </div>
     </div>
   </section>
-  
-    <!-- Footer -->
-    <footer>
-        <p>Contact: <a href="mailto:kane.mo@northeastern.edu">karim@example.com</a></p>
-      </footer>
-    
-      <!-- Script -->
-      <script src="script.js"></script>
-    </body>
-    </html>
-    
-    
-    
+
+  <!-- Main Content -->
+  <div class="container">
+    <section class="section">
+      <!-- Northeastern Career -->
+      <div class="experience-block fade-in-up">
+        <h3>Division I Rowing at Northeastern University</h3>
+        <p>
+          I rowed for four years as a Division I athlete at Northeastern University. My journey began with a standout freshman year, culminating in a <strong>4th place finish at the IRA National Championships</strong>. Throughout my college career, I trained and competed at the highest collegiate level, balancing early-morning practices and full-time coursework as a committed student-athlete.
+        </p>
+        <p>
+          I also served as the team's <strong>Student-Athlete Advisory Committee (SAAC) representative</strong>. In this role, I acted as the bridge between my teammates and the athletic department—representing athlete voices, supporting well-being initiatives, and collaborating on university-wide athletic programming.
+        </p>
+        <div class="rowing-gallery">
+          <img src="images/northeastern-1.jpg" alt="Northeastern Rowing" />
+          <img src="images/northeastern-2.jpg" alt="Rowing at IRA Nationals" />
+        </div>
+      </div>
+
+      <!-- A Most Beautiful Thing Inclusion Fund -->
+      <div class="experience-block fade-in-up">
+        <h3>Ambassador – A Most Beautiful Thing Inclusion Fund</h3>
+        <p>
+          I'm proud to be an ambassador for the <strong>A Most Beautiful Thing Inclusion Fund</strong>, an organization that uses rowing to empower youth, promote racial equity, and expand access to the sport. The fund supports athletes of color through scholarships, equipment, and programming that break down longstanding barriers to entry.
+        </p>
+        <p>
+          As part of this work, I had the honor of rowing in one of the <strong>first all-Black 8+ crews to race at the Head of the Charles Regatta</strong>—one of the largest and most prestigious rowing events in the world. Competing on this stage alongside fellow Black athletes was a powerful moment that celebrated visibility, history, and progress in the sport.
+        </p>
+        <div class="rowing-gallery">
+          <img src="images/charles-black8.jpg" alt="All-Black 8+ at Head of the Charles" />
+          <img src="images/ambassador-event.jpg" alt="AMBTF Community Event" />
+        </div>
+      </div>
+
+      <!-- Rowing in Senegal -->
+      <div class="experience-block fade-in-up">
+        <h3>Bringing Rowing to Senegal</h3>
+        <p>
+          Rowing does not yet exist in Senegal—but I hope to change that. As someone originally from Dakar, I dream of helping launch the <strong>country's first national rowing program</strong>.
+        </p>
+        <p>
+          Thanks to a generous donation from the <strong>international rowing community</strong> (with support from World Rowing and affiliated organizations), the first equipment has already been secured. The ultimate goal is to establish a pipeline for Senegalese youth to explore rowing as a pathway to health, education, and international competition.
+        </p>
+        <div class="rowing-gallery">
+          <img src="images/senegal-vision.jpg" alt="Rowing vision in Senegal" />
+          <img src="images/senegal-boats.jpg" alt="Rowing equipment for Senegal" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Contact: <a href="mailto:kane.mo@northeastern.edu">karim@example.com</a></p>
+      <div class="footer-social">
+        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/>
+          </svg>
+        </a>
+      </div>
+      <p>&copy; 2025 Karim Kane. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
