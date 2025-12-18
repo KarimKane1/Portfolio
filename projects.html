@@ -31,8 +31,8 @@
   <section class="subpage-hero">
     <div class="container">
       <div class="subpage-hero-content">
-        <h1>Major Projects</h1>
-        <p>Explore my academic and technical projects</p>
+        <h1>Projects</h1>
+        <p>What I built, why it mattered, and what I learned</p>
       </div>
     </div>
   </section>
@@ -42,62 +42,133 @@
     <section class="section">
       <!-- Project Overview Cards -->
       <div class="grid mb-8">
-        <div class="card fade-in-up">
-          <h3>Capstone Project</h3>
-          <p>Predictive maintenance system for manufacturing equipment using machine learning and sensor data analysis.</p>
-          <a href="#capstone" class="btn btn-primary">Learn More</a>
+        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
+          <h3>Lumio</h3>
+          <p style="flex-grow: 1;">A 0→1 local services marketplace</p>
+          <a href="#lumio" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
         </div>
-        <div class="card fade-in-up">
-          <h3>Database Course Project</h3>
-          <p>Full-stack application for a shared customer rewards program connecting local coffee shops.</p>
-          <a href="#database" class="btn btn-primary">Learn More</a>
+        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
+          <h3>AI Predictive Maintenance for Manufacturing</h3>
+          <p style="flex-grow: 1;">My senior capstone project</p>
+          <a href="#capstone" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
         </div>
-      </div>
-
-      <!-- Detailed Project Sections -->
-      <div id="capstone">
-        <h2>Capstone Project: Predictive Maintenance for Manufacturing</h2>
-        <div class="project-card fade-in-up">
-          <div class="project-description">
-            <p><strong>Overview:</strong>  
-              As part of my senior capstone in Industrial Engineering at Northeastern University, I worked on a project focused on predicting machine failure in milling machines. Our goal was to reduce unplanned downtime by using sensor data to anticipate when and how machines might fail.
-            </p>
-            <p><strong>What I Contributed:</strong>  
-              I helped design and implement a predictive system that used historical sensor data to estimate both the <em>time to failure (TTF)</em> and the <em>type of failure</em> for each machine. I was involved in data cleaning, model development, and dashboard visualization.
-            </p>
-            <p><strong>Tools & Technologies:</strong>  
-              Python (DeepHit model), PostgreSQL for database management, Tableau for dashboard creation, and Excel for data exploration.
-            </p>
-            <p><strong>Key Features:</strong>  
-              A survival analysis model that predicts failure time and type, a structured PostgreSQL database, and a Tableau dashboard to visualize machine status and trends.
-            </p>
-            <p><strong>Impact:</strong>  
-              The solution helped stakeholders visualize potential failures and improve maintenance scheduling, with strong potential for cost savings and seamless integration into real operations.
-            </p>
-          </div>
+        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
+          <h3>CafeCoin Collective</h3>
+          <p style="flex-grow: 1;">My database course final project</p>
+          <a href="#cafecoin" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
+        </div>
+        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
+          <h3>WhatsApp AI Assistant</h3>
+          <p style="flex-grow: 1;">An AI-powered assistant for small businesses on WhatsApp</p>
+          <a href="#whatsapp" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
         </div>
       </div>
 
-      <div id="database">
-        <h2>CafeCoin Collective: A Shared Rewards Platform for Local Coffee Shops</h2>
-        <div class="project-card fade-in-up">
-          <div class="project-description">
-            <p><strong>Project Overview:</strong>  
-              As part of my ongoing CS 3200: Database Design course at Northeastern University, my team is currently building <em>CafeCoin Collective</em>, a full-stack data-driven application designed to support a shared customer rewards program for local coffee shops. The goal is to give small, independent cafés the ability to reward loyal customers and remain competitive with larger chains by participating in a unified rewards ecosystem.
-            </p>
-            <p><strong>Key Features (in development):</strong>  
-              Coffee shop owners will be able to register their stores into the CafeCoin network. Customers will earn "CafeCoins" by visiting participating shops and redeem them across the network. Shop owners will be able to view engagement insights, while admins will manage analytics and system-wide performance.
-            </p>
-            <p><strong>Tools & Technologies:</strong>  
-              MySQL for database design, Python + Flask for building the RESTful API, and Streamlit (planned) for the user interface. The full stack is deployed in Docker containers for consistency across development.
-            </p>
-            <p><strong>System Architecture:</strong>  
-              The application includes three primary components: a MySQL database server, a Flask API for the backend logic and data access layer, and a Streamlit-based UI currently under development.
-            </p>
-            <p><strong>Status:</strong>  
-              The project is actively in development during Spring 2025. We're completing our ER models and schema, building out the database, and progressing toward API and frontend implementation. CafeCoin Collective highlights collaborative design and end-to-end development of a scalable data-driven system.
-            </p>
-          </div>
+      <!-- Lumio Project -->
+      <div id="lumio" class="experience-block fade-in-up">
+        <h2>Lumio — Local Services Marketplace</h2>
+        <p style="font-size: 1.1rem; color: var(--neutral-600); margin-bottom: var(--space-6); font-style: italic;">A real-world product built from scratch to improve how people find and trust local service providers.</p>
+        
+        <div class="experience-content">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What it is</h4>
+          <p>
+            Lumio is a marketplace designed to help people discover reliable local service providers by transforming informal, word-of-mouth referrals into a more transparent and structured experience. I worked on Lumio as a co-founder, leading both product direction and technical execution from the earliest stages.
+          </p>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What I worked on</h4>
+          <ul>
+            <li>Defined the initial MVP scope and shipped the first version within a short timeline</li>
+            <li>Conducted user interviews to understand trust, pricing, and discovery challenges</li>
+            <li>Designed and iterated on core workflows including onboarding, booking, and messaging</li>
+            <li>Built and refined features based on real user behavior and feedback</li>
+            <li>Used lightweight analytics and qualitative insights to guide prioritization and iteration</li>
+          </ul>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">Why it matters</h4>
+          <p>
+            Lumio taught me how products actually take shape outside of structured environments—where speed, user behavior, and tradeoffs matter more than perfect plans.
+          </p>
+        </div>
+      </div>
+
+      <div class="experience-divider"></div>
+
+      <!-- Capstone Project -->
+      <div id="capstone" class="experience-block fade-in-up">
+        <h2>AI Predictive Maintenance for Manufacturing</h2>
+        <p style="font-size: 1.1rem; color: var(--neutral-600); margin-bottom: var(--space-6); font-style: italic;">My senior capstone project</p>
+        
+        <div class="experience-content">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What it was</h4>
+          <p>
+            As my senior capstone project, I worked on a system that used historical sensor data to predict when manufacturing machines were likely to fail. The goal was to reduce unplanned downtime and help teams plan maintenance more proactively.
+          </p>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What I worked on</h4>
+          <ul>
+            <li>Helped design a predictive model to estimate time-to-failure and failure type</li>
+            <li>Cleaned and structured large sensor datasets for analysis</li>
+            <li>Built dashboards to visualize machine health and trends for stakeholders</li>
+          </ul>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">Why it mattered</h4>
+          <p>
+            This project strengthened how I think about translating complex data into practical, operational decisions.
+          </p>
+        </div>
+      </div>
+
+      <div class="experience-divider"></div>
+
+      <!-- CafeCoin Project -->
+      <div id="cafecoin" class="experience-block fade-in-up">
+        <h2>CafeCoin Collective</h2>
+        <p style="font-size: 1.1rem; color: var(--neutral-600); margin-bottom: var(--space-6); font-style: italic;">My database course final project</p>
+        
+        <div class="experience-content">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What it was</h4>
+          <p>
+            CafeCoin Collective is a data-driven application that allows local coffee shops to participate in a shared customer rewards network, helping small businesses compete with larger chains.
+          </p>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What I worked on</h4>
+          <ul>
+            <li>Designed the database schema and relationships for customers, shops, and rewards</li>
+            <li>Built backend APIs to support transactions and analytics</li>
+            <li>Worked end-to-end across database, backend, and UI development</li>
+          </ul>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">Why it mattered</h4>
+          <p>
+            This project pushed me to think about systems holistically—from data design to user experience—and how small product decisions affect real businesses.
+          </p>
+        </div>
+      </div>
+
+      <div class="experience-divider"></div>
+
+      <!-- WhatsApp AI Project -->
+      <div id="whatsapp" class="experience-block fade-in-up">
+        <h2>WhatsApp AI Assistant</h2>
+        <p style="font-size: 1.1rem; color: var(--neutral-600); margin-bottom: var(--space-6); font-style: italic;">An AI-powered assistant for small businesses on WhatsApp</p>
+        
+        <div class="experience-content">
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What it was</h4>
+          <p>
+            I built a WhatsApp-integrated AI assistant to help small businesses automate customer responses and order intake, exploring how AI could work in real messaging environments.
+          </p>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">What I worked on</h4>
+          <ul>
+            <li>Designed conversation flows and prompts for common customer interactions</li>
+            <li>Built backend logic to handle message routing and responses</li>
+            <li>Tested and iterated based on real-world constraints like latency and user trust</li>
+          </ul>
+          
+          <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--neutral-800); margin-top: var(--space-6); margin-bottom: var(--space-3);">Why it mattered</h4>
+          <p>
+            This project taught me how product ideas behave in the real world, where edge cases, trust, and usability matter as much as the technology itself.
+          </p>
         </div>
       </div>
     </section>
@@ -108,7 +179,7 @@
     <div class="container">
       <p>Contact: <a href="mailto:kane.mo@northeastern.edu">kane.mo@northeastern.edu</a></p>
       <div class="footer-social">
-        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/karim-kane/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
             <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/>
           </svg>

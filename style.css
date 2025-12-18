@@ -429,23 +429,65 @@ nav a.active {
 }
 
 .skills-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: var(--space-8);
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skills-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-group h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--neutral-600);
+  margin-bottom: var(--space-6);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  width: 100%;
   align-items: center;
   justify-items: center;
 }
 
+.skills-divider {
+  width: 80%;
+  max-width: 400px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neutral-200), transparent);
+  margin: var(--space-4) 0;
+}
+
 .skills-logos img {
-  max-width: 80px;
-  height: auto;
-  filter: grayscale(100%) opacity(0.6);
+  width: 100%;
+  max-width: 110px;
+  height: 110px;
+  object-fit: contain;
+  padding: var(--space-4);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-normal);
+  opacity: 0.9;
 }
 
 .skills-logos img:hover {
-  filter: grayscale(0%) opacity(1);
-  transform: scale(1.1);
+  opacity: 1;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 /* ===================== SUBPAGE HERO ===================== */
@@ -516,6 +558,28 @@ nav a.active {
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: var(--space-6);
+}
+
+.experience-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: var(--space-4) 0;
+}
+
+.experience-content ul li {
+  padding-left: var(--space-6);
+  position: relative;
+  margin-bottom: var(--space-3);
+  line-height: 1.6;
+}
+
+.experience-content ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-600);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .experience-content {
