@@ -1415,6 +1415,7 @@ nav a:hover, nav a.active {
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-5);
+  max-width: 700px;
 }
 
 .rowing-chapter-label {
