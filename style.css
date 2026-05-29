@@ -1054,25 +1054,182 @@ nav a:hover, nav a.active {
   font-size: 1.5rem;
 }
 
-/* ===================== PROJECT CARDS ===================== */
-.project-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-xl);
-  padding: var(--space-10);
-  margin-bottom: var(--space-10);
-  box-shadow: var(--shadow-sm);
+/* ===================== PROJECT SHOWCASE ===================== */
+.proj-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.proj-card {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
   border: 1px solid var(--border);
-  border-left: 4px solid var(--terra);
-  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  background: var(--bg-card);
 }
 
-.project-card:hover {
+.proj-card:hover {
+  transform: translateY(-5px);
   box-shadow: var(--shadow-xl);
-  transform: translateY(-4px);
 }
 
-.project-description p { margin-bottom: var(--space-4); }
-.project-description strong { color: var(--text-primary); font-weight: 600; }
+/* Coloured header band */
+.proj-header {
+  background: var(--proj-color, var(--terra));
+  padding: var(--space-10) var(--space-10) var(--space-12);
+  position: relative;
+  overflow: hidden;
+}
+
+.proj-header::before {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+
+.proj-header::after {
+  content: '';
+  position: absolute;
+  right: 90px;
+  bottom: -50px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.proj-num {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: var(--space-4);
+}
+
+.proj-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  color: white;
+  margin-bottom: var(--space-3);
+  line-height: 1.05;
+  position: relative;
+  z-index: 1;
+}
+
+.proj-tagline {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Two-column body */
+.proj-body {
+  padding: var(--space-10);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+}
+
+.proj-section-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: var(--space-3);
+}
+
+.proj-card[data-accent="green"] .proj-section-label { color: var(--green); }
+.proj-card[data-accent="dark"]  .proj-section-label { color: var(--gold); }
+
+.proj-body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.proj-why { margin-top: var(--space-8); }
+
+/* Bullet list */
+.proj-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.proj-bullets li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.proj-bullets li::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--terra);
+  flex-shrink: 0;
+  margin-top: 0.58em;
+  opacity: 0.75;
+}
+
+.proj-card[data-accent="green"] .proj-bullets li::before { background: var(--green); }
+.proj-card[data-accent="dark"]  .proj-bullets li::before { background: var(--gold); }
+
+/* Tags row */
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.proj-tag {
+  display: inline-flex;
+  padding: 4px var(--space-3);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .proj-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-6);
+  }
+
+  .proj-header { padding: var(--space-8); }
+}
 
 /* ===================== ROWING GALLERY ===================== */
 .rowing-gallery {

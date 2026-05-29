@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karim's Portfolio | Projects</title>
+  <title>Karim Kane | Projects</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header & Navigation -->
+
   <header>
     <div class="container">
       <div class="header-content">
@@ -27,166 +27,173 @@
     </div>
   </header>
 
-  <!-- Subpage Hero -->
   <section class="subpage-hero">
     <div class="container">
       <div class="subpage-hero-content">
         <span class="eyebrow">Building</span>
         <h1>Projects</h1>
-        <p>What I built, why it mattered, and what I learned</p>
+        <p>Things I built, shipped, and learned from</p>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
   <div class="container">
     <section class="section">
-      <!-- Project Overview Cards -->
-      <div class="grid mb-8">
-        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
-          <h3>Lumio</h3>
-          <p style="flex-grow: 1;">A 0→1 local services marketplace</p>
-          <a href="#lumio" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
-        </div>
-        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
-          <h3>AI Predictive Maintenance for Manufacturing</h3>
-          <p style="flex-grow: 1;">My senior capstone project</p>
-          <a href="#capstone" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
-        </div>
-        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
-          <h3>CafeCoin Collective</h3>
-          <p style="flex-grow: 1;">My database course final project</p>
-          <a href="#cafecoin" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
-        </div>
-        <div class="card fade-in-up" style="display: flex; flex-direction: column;">
-          <h3>WhatsApp AI Assistant</h3>
-          <p style="flex-grow: 1;">An AI-powered assistant for small businesses on WhatsApp</p>
-          <a href="#whatsapp" class="btn btn-primary" style="margin-top: auto;">Learn More</a>
-        </div>
-      </div>
+      <div class="proj-grid">
 
-      <!-- Lumio Project -->
-      <div id="lumio" class="experience-block fade-in-up">
-        <h2>Lumio — Local Services Marketplace</h2>
-        <p style="font-style: italic; color: var(--text-muted); margin-bottom: var(--space-6);">A real-world product built from scratch to improve how people find and trust local service providers.</p>
-        
-        <div class="experience-content">
-          <h4>What it is</h4>
-          <p>
-            Lumio is a marketplace designed to help people discover reliable local service providers by transforming informal, word-of-mouth referrals into a more transparent and structured experience. I worked on Lumio as a co-founder, leading both product direction and technical execution from the earliest stages.
-          </p>
-          
-          <h4>What I worked on</h4>
-          <ul>
-            <li>Defined the initial MVP scope and shipped the first version within a short timeline</li>
-            <li>Conducted user interviews to understand trust, pricing, and discovery challenges</li>
-            <li>Designed and iterated on core workflows including onboarding, booking, and messaging</li>
-            <li>Built and refined features based on real user behavior and feedback</li>
-            <li>Used lightweight analytics and qualitative insights to guide prioritization and iteration</li>
-          </ul>
-          
-          <h4>Why it matters</h4>
-          <p>
-            Lumio taught me how products actually take shape outside of structured environments—where speed, user behavior, and tradeoffs matter more than perfect plans.
-          </p>
+        <!-- ── Lumio ── terracotta -->
+        <div class="proj-card fade-in-up" data-accent="terra" style="--proj-color: #c4622d;">
+          <div class="proj-header">
+            <span class="proj-num">PROJECT 01</span>
+            <h2 class="proj-title">Lumio</h2>
+            <p class="proj-tagline">
+              A 0→1 marketplace built to transform informal word-of-mouth referrals
+              into a trusted, structured experience for finding local services.
+            </p>
+          </div>
+          <div class="proj-body">
+            <div class="proj-body-left">
+              <span class="proj-section-label">What it is</span>
+              <p>
+                Lumio is a marketplace designed to help people discover reliable local service
+                providers. I co-founded it and led both product direction and technical execution
+                from the earliest stages — user research, MVP scoping, and iterating through real
+                user feedback.
+              </p>
+              <div class="proj-why">
+                <span class="proj-section-label">Why it mattered</span>
+                <p>
+                  Lumio taught me how products actually take shape outside structured environments —
+                  where speed, user behavior, and tradeoffs matter more than perfect plans.
+                </p>
+              </div>
+            </div>
+            <div class="proj-body-right">
+              <span class="proj-section-label">What I worked on</span>
+              <ul class="proj-bullets">
+                <li>Defined the initial MVP scope and shipped the first version within a short timeline</li>
+                <li>Conducted user interviews to surface trust, pricing, and discovery pain points</li>
+                <li>Designed and iterated on core workflows: onboarding, booking, and messaging</li>
+                <li>Built and refined features based on real user behavior and qualitative feedback</li>
+                <li>Used lightweight analytics to guide prioritization and iteration</li>
+              </ul>
+              <div class="proj-tags">
+                <span class="proj-tag">Co-founder</span>
+                <span class="proj-tag">Product Design</span>
+                <span class="proj-tag">React Native</span>
+                <span class="proj-tag">Supabase</span>
+                <span class="proj-tag">Vercel</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="experience-divider"></div>
-
-      <!-- Capstone Project -->
-      <div id="capstone" class="experience-block fade-in-up">
-        <h2>AI Predictive Maintenance for Manufacturing</h2>
-        <p style="font-style: italic; color: var(--text-muted); margin-bottom: var(--space-6);">My senior capstone project</p>
-        
-        <div class="experience-content">
-          <h4>What it was</h4>
-          <p>
-            As my senior capstone project, I worked on a system that used historical sensor data to predict when manufacturing machines were likely to fail. The goal was to reduce unplanned downtime and help teams plan maintenance more proactively.
-          </p>
-          
-          <h4>What I worked on</h4>
-          <ul>
-            <li>Helped design a predictive model to estimate time-to-failure and failure type</li>
-            <li>Cleaned and structured large sensor datasets for analysis</li>
-            <li>Built dashboards to visualize machine health and trends for stakeholders</li>
-          </ul>
-          
-          <h4>Why it mattered</h4>
-          <p>
-            This project strengthened how I think about translating complex data into practical, operational decisions.
-          </p>
+        <!-- ── AI Predictive Maintenance ── forest green -->
+        <div class="proj-card fade-in-up" data-accent="green" style="--proj-color: #2d5a3d;">
+          <div class="proj-header">
+            <span class="proj-num">PROJECT 02</span>
+            <h2 class="proj-title">AI Predictive Maintenance</h2>
+            <p class="proj-tagline">
+              Senior capstone project using historical sensor data to predict
+              manufacturing equipment failures before they happen.
+            </p>
+          </div>
+          <div class="proj-body">
+            <div class="proj-body-left">
+              <span class="proj-section-label">What it was</span>
+              <p>
+                A system that used historical sensor data to predict when manufacturing
+                machines were likely to fail. The goal was to reduce unplanned downtime
+                and help operations teams plan maintenance more proactively — moving from
+                reactive to predictive.
+              </p>
+              <div class="proj-why">
+                <span class="proj-section-label">Why it mattered</span>
+                <p>
+                  This project sharpened how I translate complex data into practical,
+                  operational decisions — and how good visualization makes technical
+                  findings actually usable.
+                </p>
+              </div>
+            </div>
+            <div class="proj-body-right">
+              <span class="proj-section-label">What I worked on</span>
+              <ul class="proj-bullets">
+                <li>Helped design a predictive model to estimate time-to-failure and failure type</li>
+                <li>Cleaned and structured large sensor datasets to make them analysis-ready</li>
+                <li>Built dashboards to visualize machine health and maintenance trends for stakeholders</li>
+              </ul>
+              <div class="proj-tags">
+                <span class="proj-tag">Senior Capstone</span>
+                <span class="proj-tag">Python</span>
+                <span class="proj-tag">Data Analysis</span>
+                <span class="proj-tag">Machine Learning</span>
+                <span class="proj-tag">Dashboard Design</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="experience-divider"></div>
-
-      <!-- CafeCoin Project -->
-      <div id="cafecoin" class="experience-block fade-in-up">
-        <h2>CafeCoin Collective</h2>
-        <p style="font-style: italic; color: var(--text-muted); margin-bottom: var(--space-6);">My database course final project</p>
-        
-        <div class="experience-content">
-          <h4>What it was</h4>
-          <p>
-            CafeCoin Collective is a data-driven application that allows local coffee shops to participate in a shared customer rewards network, helping small businesses compete with larger chains.
-          </p>
-          
-          <h4>What I worked on</h4>
-          <ul>
-            <li>Designed the database schema and relationships for customers, shops, and rewards</li>
-            <li>Built backend APIs to support transactions and analytics</li>
-            <li>Worked end-to-end across database, backend, and UI development</li>
-          </ul>
-          
-          <h4>Why it mattered</h4>
-          <p>
-            This project pushed me to think about systems holistically—from data design to user experience—and how small product decisions affect real businesses.
-          </p>
+        <!-- ── CafeCoin ── deep warm brown -->
+        <div class="proj-card fade-in-up" data-accent="dark" style="--proj-color: #3d2818;">
+          <div class="proj-header">
+            <span class="proj-num">PROJECT 03</span>
+            <h2 class="proj-title">CafeCoin Collective</h2>
+            <p class="proj-tagline">
+              A shared customer rewards network letting independent coffee shops
+              compete with larger chains — built end-to-end for a database course.
+            </p>
+          </div>
+          <div class="proj-body">
+            <div class="proj-body-left">
+              <span class="proj-section-label">What it was</span>
+              <p>
+                A data-driven application that allows local coffee shops to participate in
+                a shared rewards network. Customers earn and redeem points across any
+                participating shop — giving small businesses the loyalty infrastructure
+                that chains have by default.
+              </p>
+              <div class="proj-why">
+                <span class="proj-section-label">Why it mattered</span>
+                <p>
+                  This pushed me to think about systems holistically — from data design to
+                  user experience — and how small product decisions ripple through to real
+                  business outcomes.
+                </p>
+              </div>
+            </div>
+            <div class="proj-body-right">
+              <span class="proj-section-label">What I worked on</span>
+              <ul class="proj-bullets">
+                <li>Designed the database schema and entity relationships for customers, shops, and rewards</li>
+                <li>Built backend APIs to handle transactions, point balances, and analytics</li>
+                <li>Worked end-to-end: database design, backend logic, and front-end UI</li>
+              </ul>
+              <div class="proj-tags">
+                <span class="proj-tag">Full-Stack</span>
+                <span class="proj-tag">SQL</span>
+                <span class="proj-tag">Database Design</span>
+                <span class="proj-tag">Backend APIs</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="experience-divider"></div>
-
-      <!-- WhatsApp AI Project -->
-      <div id="whatsapp" class="experience-block fade-in-up">
-        <h2>WhatsApp AI Assistant</h2>
-        <p style="font-style: italic; color: var(--text-muted); margin-bottom: var(--space-6);">An AI-powered assistant for small businesses on WhatsApp</p>
-        
-        <div class="experience-content">
-          <h4>What it was</h4>
-          <p>
-            I built a WhatsApp-integrated AI assistant to help small businesses automate customer responses and order intake, exploring how AI could work in real messaging environments.
-          </p>
-          
-          <h4>What I worked on</h4>
-          <ul>
-            <li>Designed conversation flows and prompts for common customer interactions</li>
-            <li>Built backend logic to handle message routing and responses</li>
-            <li>Tested and iterated based on real-world constraints like latency and user trust</li>
-          </ul>
-          
-          <h4>Why it mattered</h4>
-          <p>
-            This project taught me how product ideas behave in the real world, where edge cases, trust, and usability matter as much as the technology itself.
-          </p>
-        </div>
       </div>
     </section>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>Contact: <a href="mailto:kane.mo@northeastern.edu">kane.mo@northeastern.edu</a></p>
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/karim-kane/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
             <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/>
           </svg>
         </a>
       </div>
-      <p>&copy; 2025 Karim Kane. All rights reserved.</p>
+      <p>&copy; 2026 Karim Kane. All rights reserved.</p>
     </div>
   </footer>
 
