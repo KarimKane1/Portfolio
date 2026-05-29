@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karim's Portfolio | Home</title>
+  <title>Karim Kane | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header & Navigation -->
+
   <header>
     <div class="container">
       <div class="header-content">
@@ -27,43 +27,49 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-content fade-in-up">
-        <h1>Welcome to my Portfolio!</h1>
-        <p>
-          Hello, I'm Karim, a recent graduate from Northeastern University's Honors College 
-          with a degree in Industrial Engineering and former Division 1 rowing athlete.
+        <span class="hero-intro">Hello, I'm</span>
+        <h1>Karim Kane<br><em>Engineer &amp; Athlete.</em></h1>
+        <p class="hero-tagline">
+          Industrial Engineering graduate from Northeastern University's Honors College.
+          Former Division I rower. I build things that work and find ways to make them better.
         </p>
+        <div class="hero-tags">
+          <span class="hero-tag">Industrial Engineering</span>
+          <span class="hero-tag">Division I Athlete</span>
+          <span class="hero-tag">Data &amp; Process</span>
+          <span class="hero-tag">Northeastern '25</span>
+        </div>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="#about" class="btn btn-primary">About Me</a>
           <a href="experience.html" class="btn btn-secondary">View Experience</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
   <div class="container">
-    <!-- About Section -->
+
     <section class="section" id="about">
       <div class="about-section fade-in-up">
         <div class="about-text">
-          <h2>About Me</h2>
+          <span class="eyebrow">Who I am</span>
+          <h2>A little about me</h2>
           <p>
-            I'm a Senegalese-American engineer and former Division I athlete who loves learning, 
-            building, and solving problems. I recently graduated from Northeastern University's 
-            Honors College, where rowing and engineering shaped how I think about discipline, 
+            I'm a Senegalese-American engineer and former Division I athlete who loves learning,
+            building, and solving problems. I recently graduated from Northeastern University's
+            Honors College, where rowing and engineering shaped how I think about discipline,
             teamwork, and growth.
           </p>
           <p>
-            I'm driven by curiosity and enjoy figuring out how things can be done better, simpler, 
+            I'm driven by curiosity and enjoy figuring out how things can be done better, simpler,
             or more thoughtfully.
           </p>
           <p>
-            During college, I gained hands-on experience across different industries, interning as 
-            an engineer at Walt Disney World, a market research analyst at Rogers Corporation, and 
+            During college, I gained hands-on experience across different industries, interning as
+            an engineer at Walt Disney World, a market research analyst at Rogers Corporation, and
             an analyst at Ginkgo Bioworks.
           </p>
         </div>
@@ -73,61 +79,61 @@
       </div>
     </section>
 
-    <!-- Featured Experiences -->
     <section class="section-sm">
-      <h2 class="text-center mb-4">A Few Places I've Learned</h2>
-      <p class="text-center mb-8" style="max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text-color); opacity: 0.8;">
-        A few places where I explored different industries and learned how real-world problems get solved.
-      </p>
+      <div class="section-header">
+        <div class="section-divider"></div>
+        <h2>A Few Places I've Learned</h2>
+        <p>Different industries, different problems — each one shaped how I think.</p>
+      </div>
       <div class="grid">
         <div class="card fade-in-up" style="display: flex; flex-direction: column;">
-          <div style="margin-bottom: 1.5rem; text-align: center; display: flex; justify-content: center; align-items: center; min-height: 80px;">
-            <img src="images/disney-logo.png" alt="Walt Disney World" style="max-height: 70px; max-width: 100%; object-fit: contain; display: block;" />
+          <div class="card-logo-area">
+            <img src="images/disney-logo.png" alt="Walt Disney World" style="max-height: 70px; max-width: 100%; object-fit: contain;" />
           </div>
           <h3>Walt Disney World</h3>
-          <p style="font-size: 0.9rem; color: var(--text-color); opacity: 0.7; margin-bottom: 1rem;">Industrial Engineering Intern</p>
+          <span class="role">Industrial Engineering Intern</span>
           <p style="flex-grow: 1;">
-            Worked on improving food and beverage operations by analyzing data, streamlining processes, 
-            and supporting better guest experiences at scale.
+            Analyzed data and streamlined food &amp; beverage operations to improve guest
+            experiences at scale across dozens of quick-service locations.
           </p>
           <a href="experience.html" class="btn btn-primary" style="margin-top: auto;">Learn more</a>
         </div>
         <div class="card fade-in-up" style="display: flex; flex-direction: column;">
-          <div style="margin-bottom: 1.5rem; text-align: center; display: flex; justify-content: center; align-items: center; min-height: 80px;">
-            <img src="images/rogers-logo.png" alt="Rogers Corporation" style="max-height: 70px; max-width: 100%; object-fit: contain; display: block;" />
+          <div class="card-logo-area">
+            <img src="images/rogers-logo.png" alt="Rogers Corporation" style="max-height: 70px; max-width: 100%; object-fit: contain;" />
           </div>
           <h3>Rogers Corporation</h3>
-          <p style="font-size: 0.9rem; color: var(--text-color); opacity: 0.7; margin-bottom: 1rem;">Market Research Intern</p>
+          <span class="role">Market Research Intern</span>
           <p style="flex-grow: 1;">
-            Researched industry trends and customer needs to help inform strategic decisions around 
-            growth and market opportunities.
+            Researched industry trends and customer needs to inform strategic decisions
+            around growth and market expansion.
           </p>
           <a href="experience.html" class="btn btn-primary" style="margin-top: auto;">Learn more</a>
         </div>
         <div class="card fade-in-up" style="display: flex; flex-direction: column;">
-          <div style="margin-bottom: 1.5rem; text-align: center; display: flex; justify-content: center; align-items: center; min-height: 80px;">
-            <img src="images/ginkgo-logo.png" alt="Ginkgo Bioworks" style="max-height: 70px; max-width: 100%; object-fit: contain; display: block;" />
+          <div class="card-logo-area">
+            <img src="images/ginkgo-logo.png" alt="Ginkgo Bioworks" style="max-height: 70px; max-width: 100%; object-fit: contain;" />
           </div>
           <h3>Ginkgo Bioworks</h3>
-          <p style="font-size: 0.9rem; color: var(--text-color); opacity: 0.7; margin-bottom: 1rem;">Analyst Intern</p>
+          <span class="role">Analyst Intern</span>
           <p style="flex-grow: 1;">
-            Supported lab operations and innovation efforts by building analyses and reporting tools 
-            that helped teams make better decisions.
+            Built analyses and reporting tools to support lab operations, helping teams
+            make faster and more informed decisions.
           </p>
           <a href="experience.html" class="btn btn-primary" style="margin-top: auto;">Learn more</a>
         </div>
       </div>
     </section>
 
-    <!-- Skills & Technologies -->
     <section class="skills-section fade-in-up">
-      <h2>Tools I've Worked With</h2>
-      <p>
-        Some of the tools and platforms I've used across professional work and personal projects.
-      </p>
+      <div class="section-header text-center">
+        <div class="section-divider"></div>
+        <h2>Tools I've Worked With</h2>
+        <p>Platforms and tools I've used across professional work and personal projects.</p>
+      </div>
       <div class="skills-logos">
         <div class="skills-group">
-          <h3>Data & Analysis</h3>
+          <h3>Data &amp; Analysis</h3>
           <div class="skills-row">
             <img src="images/Python-Logo.png" alt="Python" />
             <img src="images/SQL-Logo.png" alt="SQL" />
@@ -137,7 +143,7 @@
         </div>
         <div class="skills-divider"></div>
         <div class="skills-group">
-          <h3>Product & Engineering</h3>
+          <h3>Product &amp; Engineering</h3>
           <div class="skills-row">
             <img src="images/github-logo.png" alt="GitHub" />
             <img src="images/react-native-logo.png" alt="React Native" />
@@ -147,20 +153,20 @@
         </div>
       </div>
     </section>
+
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>Contact: <a href="mailto:kane.mo@northeastern.edu">kane.mo@northeastern.edu</a></p>
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/karim-kane/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
             <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/>
           </svg>
         </a>
       </div>
-      <p>&copy; 2025 Karim Kane. All rights reserved.</p>
+      <p>&copy; 2026 Karim Kane. All rights reserved.</p>
     </div>
   </footer>
 
