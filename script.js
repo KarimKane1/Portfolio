@@ -73,6 +73,31 @@ document.addEventListener('DOMContentLoaded', function () {
     timelineEntries.forEach(el => entryObserver.observe(el));
   }
 
+  // ── Project nav — highlight active pill on scroll ────────────────────────
+  const projCards = document.querySelectorAll('.proj-card[id]');
+  const projPills = document.querySelectorAll('.proj-nav-pill');
+
+  if (projCards.length && projPills.length) {
+    const projPillMap = {};
+    projPills.forEach(pill => {
+      const id = pill.getAttribute('href')?.replace('#', '');
+      if (id) projPillMap[id] = pill;
+    });
+
+    const activateProjPill = id => {
+      projPills.forEach(p => p.classList.remove('is-active'));
+      if (projPillMap[id]) projPillMap[id].classList.add('is-active');
+    };
+
+    const projObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) activateProjPill(entry.target.id);
+      });
+    }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
+
+    projCards.forEach(card => projObserver.observe(card));
+  }
+
   // ── Experience sidebar switcher ───────────────────────────────────────────
   const expNavItems = document.querySelectorAll('.exp-nav-item');
   const expPanels   = document.querySelectorAll('.exp-panel');
