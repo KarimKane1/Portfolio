@@ -1,166 +1,167 @@
-// Enhanced Portfolio JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scrolling for anchor links
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ── Smooth scroll with header + nav offset ────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      
-      // Check if href is more than just "#"
-      if (href && href.length > 1) {
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
+      if (!href || href.length <= 1) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const headerH = document.querySelector('header')?.offsetHeight || 73;
+      const navH    = document.querySelector('.timeline-nav')?.offsetHeight || 0;
+      const offset  = headerH + navH + 16;
+      const top     = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 
-  // Intersection Observer for fade-in animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
+  // ── Fade-in-up on scroll ──────────────────────────────────────────────────
+  const fadeEls = document.querySelectorAll('.fade-in-up');
+  const fadeObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
+        fadeObserver.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  // Observe all fade-in-up elements
-  const fadeElements = document.querySelectorAll('.fade-in-up');
-  fadeElements.forEach(el => {
+  fadeEls.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(el);
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity 0.65s ease-out, transform 0.65s ease-out';
+    fadeObserver.observe(el);
   });
 
-  // Header scroll effect
+  // ── Header scroll shadow ──────────────────────────────────────────────────
   const header = document.querySelector('header');
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener('scroll', function() {
-    const currentScrollY = window.scrollY;
-    
-    if (currentScrollY > 100) {
-      header.style.background = 'rgba(255, 255, 255, 0.98)';
-      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+  const onScroll = () => {
+    if (window.scrollY > 60) {
+      header.style.boxShadow = '0 4px 20px rgba(44, 20, 8, 0.1)';
+      header.style.background = 'rgba(250, 247, 242, 0.97)';
     } else {
-      header.style.background = 'rgba(255, 255, 255, 0.95)';
-      header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+      header.style.boxShadow = '';
+      header.style.background = '';
     }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-    lastScrollY = currentScrollY;
-  });
+  // ── Timeline nav — highlight active pill on scroll ────────────────────────
+  const timelineEntries = document.querySelectorAll('.timeline-entry[id]');
+  const navPills = document.querySelectorAll('.timeline-nav-pill');
 
-  // Enhanced card hover effects
-  const cards = document.querySelectorAll('.card, .experience-block, .award-block, .project-card');
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-8px) scale(1.02)';
+  if (timelineEntries.length && navPills.length) {
+    const pillMap = {};
+    navPills.forEach(pill => {
+      const id = pill.getAttribute('href')?.replace('#', '');
+      if (id) pillMap[id] = pill;
     });
-    
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0) scale(1)';
+
+    const activatePill = id => {
+      navPills.forEach(p => p.classList.remove('is-active'));
+      if (pillMap[id]) pillMap[id].classList.add('is-active');
+    };
+
+    const entryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) activatePill(entry.target.id);
+      });
+    }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+
+    timelineEntries.forEach(el => entryObserver.observe(el));
+  }
+
+  // ── Project nav — highlight active pill on scroll ────────────────────────
+  const projCards = document.querySelectorAll('.proj-card[id]');
+  const projPills = document.querySelectorAll('.proj-nav-pill');
+
+  if (projCards.length && projPills.length) {
+    const projPillMap = {};
+    projPills.forEach(pill => {
+      const id = pill.getAttribute('href')?.replace('#', '');
+      if (id) projPillMap[id] = pill;
     });
-  });
 
-  // Skills logo animation on scroll
-  const skillsLogos = document.querySelectorAll('.skills-logos img');
-  const skillsObserver = new IntersectionObserver(function(entries) {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'scale(1) rotate(0deg)';
-        }, index * 100);
-      }
-    });
-  }, { threshold: 0.5 });
+    const activateProjPill = id => {
+      projPills.forEach(p => p.classList.remove('is-active'));
+      if (projPillMap[id]) projPillMap[id].classList.add('is-active');
+    };
 
-  skillsLogos.forEach(logo => {
-    logo.style.opacity = '0.3';
-    logo.style.transform = 'scale(0.8) rotate(-10deg)';
-    logo.style.transition = 'all 0.5s ease-out';
-    skillsObserver.observe(logo);
-  });
+    const projObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) activateProjPill(entry.target.id);
+      });
+    }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
 
-  // Button click animations
-  const buttons = document.querySelectorAll('.btn');
-  buttons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      const ripple = document.createElement('span');
-      const rect = this.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size / 2;
-      const y = e.clientY - rect.top - size / 2;
-      
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      ripple.classList.add('ripple');
-      
-      this.appendChild(ripple);
-      
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
-    });
-  });
+    projCards.forEach(card => projObserver.observe(card));
+  }
 
-  // Add ripple effect styles
-  const style = document.createElement('style');
-  style.textContent = `
-    .btn {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(0);
-      animation: ripple-animation 0.6s linear;
-      pointer-events: none;
-    }
-    
-    @keyframes ripple-animation {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
+  // ── Experience sidebar switcher ───────────────────────────────────────────
+  const expNavItems = document.querySelectorAll('.exp-nav-item');
+  const expPanels   = document.querySelectorAll('.exp-panel');
 
-  // Parallax effect for hero section
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.5;
-      hero.style.transform = `translateY(${rate}px)`;
+  if (expNavItems.length) {
+    expNavItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const target = item.dataset.target;
+
+        expNavItems.forEach(i => i.classList.remove('is-active'));
+        expPanels.forEach(p => p.classList.remove('is-active'));
+
+        item.classList.add('is-active');
+        const panel = document.getElementById(target);
+        if (panel) panel.classList.add('is-active');
+      });
     });
   }
 
-  // Active navigation highlighting
-  const navLinks = document.querySelectorAll('nav a');
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
-    }
+  // ── Skills logos stagger in ───────────────────────────────────────────────
+  const skillLogos = document.querySelectorAll('.skills-logos img');
+  const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '0.85';
+          entry.target.style.transform = 'translateY(0) scale(1)';
+        }, i * 80);
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skillLogos.forEach(logo => {
+    logo.style.opacity = '0';
+    logo.style.transform = 'translateY(12px) scale(0.9)';
+    logo.style.transition = 'opacity 0.45s ease-out, transform 0.45s ease-out';
+    skillObserver.observe(logo);
   });
+
+  // ── Button ripple ─────────────────────────────────────────────────────────
+  const rippleStyle = document.createElement('style');
+  rippleStyle.textContent = `
+    .btn { position: relative; overflow: hidden; }
+    .ripple {
+      position: absolute; border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+      transform: scale(0); pointer-events: none;
+      animation: ripple-anim 0.55s linear;
+    }
+    @keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
+  `;
+  document.head.appendChild(rippleStyle);
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      const r = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+      r.classList.add('ripple');
+      this.appendChild(r);
+      setTimeout(() => r.remove(), 600);
+    });
+  });
+
 });
