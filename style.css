@@ -698,184 +698,230 @@ nav a:hover, nav a.active {
   border-color: var(--terra);
 }
 
-/* ── Alternating timeline ── */
-.timeline {
-  position: relative;
-}
-
-/* Center vertical line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 48px;
-  bottom: 72px;
-  width: 2px;
-  transform: translateX(-50%);
-  background: linear-gradient(to bottom, var(--terra) 0%, var(--terra-light) 60%, var(--border) 100%);
-  border-radius: 2px;
-  z-index: 0;
-}
-
-.timeline-entry {
+/* ── Experience sidebar layout ── */
+.exp-layout {
   display: grid;
-  grid-template-columns: 1fr 72px 1fr;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-8);
   align-items: start;
-  margin-bottom: var(--space-16);
-  scroll-margin-top: 160px;
 }
 
-.timeline-entry:last-child { margin-bottom: 0; }
-
-/* Center node */
-.timeline-entry-node {
-  grid-column: 2;
+/* Left sidebar — sticky company list */
+.exp-nav {
+  position: sticky;
+  top: calc(73px + var(--space-6));
   display: flex;
-  justify-content: center;
-  padding-top: var(--space-8);
-  position: relative;
-  z-index: 1;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
-.timeline-dot {
-  width: 22px;
-  height: 22px;
-  background: var(--bg);
-  border-radius: 50%;
-  border: 3px solid var(--terra);
-  box-shadow: 0 0 0 5px var(--terra-wash);
+.exp-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: var(--space-5) var(--space-5);
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-align: left;
   transition: all var(--transition-normal);
-  flex-shrink: 0;
+  width: 100%;
 }
 
-.timeline-entry:hover .timeline-dot {
-  background: var(--terra);
-  box-shadow: 0 0 0 8px var(--terra-wash), var(--shadow-terra);
-  transform: scale(1.2);
+.exp-nav-item:hover {
+  border-left-color: var(--terra-light);
+  background: var(--terra-wash);
 }
 
-/* Left card */
-.entry-left .timeline-entry-card  { grid-column: 1; padding-right: var(--space-8); }
-.entry-left .timeline-entry-aside { grid-column: 3; padding-left: var(--space-8); padding-top: calc(var(--space-8) + 4px); }
-
-/* Right card */
-.entry-right .timeline-entry-card  { grid-column: 3; padding-left: var(--space-8); }
-.entry-right .timeline-entry-aside { grid-column: 1; padding-right: var(--space-8); padding-top: calc(var(--space-8) + 4px); text-align: right; }
-
-/* Connector — short horizontal line between card edge and dot */
-.timeline-entry-card { position: relative; }
-
-.entry-left .timeline-entry-card::after {
-  content: '';
-  position: absolute;
-  right: calc(var(--space-8) - var(--space-4));
-  top: calc(var(--space-8) + 9px);
-  width: var(--space-4);
-  height: 1px;
-  background: var(--border-warm);
+.exp-nav-item.is-active {
+  border-color: var(--terra-light);
+  border-left-color: var(--terra);
+  background: var(--terra-wash);
 }
 
-.entry-right .timeline-entry-card::after {
-  content: '';
-  position: absolute;
-  left: calc(var(--space-8) - var(--space-4));
-  top: calc(var(--space-8) + 9px);
-  width: var(--space-4);
-  height: 1px;
-  background: var(--border-warm);
-}
-
-/* Aside — label area on the non-card side */
-.timeline-aside-badge {
-  display: inline-flex;
-  padding: 5px var(--space-3);
-  background: var(--terra);
-  color: white;
-  border-radius: var(--radius-full);
-  font-size: 0.68rem;
+.exp-nav-num {
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.timeline-aside-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--text-muted);
-  line-height: 1.4;
+  font-family: var(--font-mono);
+  transition: color var(--transition-fast);
 }
 
-/* Experience block overrides inside timeline */
-.timeline-entry .experience-block {
-  border-left: 1px solid var(--border);
-  border-top: 3px solid var(--terra);
+.exp-nav-item.is-active .exp-nav-num,
+.exp-nav-item:hover .exp-nav-num { color: var(--terra); }
+
+.exp-nav-company {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.15;
 }
 
-.timeline-entry .experience-block:hover { transform: translateY(-4px); }
+.exp-nav-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.3;
+}
 
-/* Timeline end */
-.timeline-end {
+/* Right content area */
+.exp-content { min-height: 480px; }
+
+.exp-panel { display: none; }
+
+.exp-panel.is-active {
+  display: block;
+  animation: fadeSlideIn 0.35s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Panel header */
+.exp-panel-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-panel-logo {
+  width: 72px;
+  height: 72px;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-3);
-  padding-top: var(--space-8);
-}
-
-.timeline-end-dot {
-  width: 12px;
-  height: 12px;
-  background: var(--border-warm);
-  border-radius: 50%;
-  border: 2px solid var(--border);
   flex-shrink: 0;
+  padding: var(--space-3);
 }
 
-.timeline-end-label {
+.exp-panel-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.exp-panel-meta { flex: 1; }
+
+.exp-panel-meta h2 {
+  margin-bottom: var(--space-1);
+  font-size: 2rem;
+}
+
+.exp-panel-badge {
+  display: inline-flex;
+  padding: 4px var(--space-3);
+  background: var(--terra);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.exp-panel-counter {
+  display: block;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: var(--space-2);
 }
 
-/* Mobile: collapse to left-aligned single column */
+/* Panel body */
+.exp-panel-body h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.exp-panel-body h4:first-child { margin-top: 0; }
+
+.exp-panel-body p {
+  margin-bottom: 0;
+}
+
+.exp-panel-body ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.exp-panel-body ul li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.exp-panel-body ul li::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: var(--terra);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.58em;
+  opacity: 0.75;
+}
+
+/* Mobile: tabs on top */
 @media (max-width: 768px) {
-  .timeline::before {
-    left: 11px;
-    top: 28px;
-    bottom: 40px;
-    transform: none;
+  .exp-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 
-  .timeline-entry {
-    display: block;
-    padding-left: 44px;
-    position: relative;
-    margin-bottom: var(--space-12);
+  .exp-nav {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: var(--space-2);
+    padding-bottom: var(--space-2);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  .timeline-entry-node {
-    position: absolute;
-    left: 0;
-    top: var(--space-8);
-    padding-top: 0;
+  .exp-nav::-webkit-scrollbar { display: none; }
+
+  .exp-nav-item {
+    min-width: 160px;
+    flex-shrink: 0;
+    border-left: 1.5px solid transparent;
+    border-bottom: 3px solid transparent;
   }
 
-  .entry-left .timeline-entry-card,
-  .entry-right .timeline-entry-card {
-    padding-right: 0;
-    padding-left: 0;
+  .exp-nav-item.is-active {
+    border-left-color: var(--terra-light);
+    border-bottom-color: var(--terra);
   }
 
-  .entry-left .timeline-entry-card::after,
-  .entry-right .timeline-entry-card::after { display: none; }
-
-  .timeline-entry-aside { display: none; }
-
-  .timeline-end { justify-content: flex-start; padding-left: 44px; }
+  .exp-panel-header { flex-direction: column; gap: var(--space-4); }
+  .exp-panel-logo   { width: 56px; height: 56px; }
 }
 
 /* ===================== EXPERIENCE BLOCKS ===================== */

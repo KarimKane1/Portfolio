@@ -73,6 +73,25 @@ document.addEventListener('DOMContentLoaded', function () {
     timelineEntries.forEach(el => entryObserver.observe(el));
   }
 
+  // ── Experience sidebar switcher ───────────────────────────────────────────
+  const expNavItems = document.querySelectorAll('.exp-nav-item');
+  const expPanels   = document.querySelectorAll('.exp-panel');
+
+  if (expNavItems.length) {
+    expNavItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const target = item.dataset.target;
+
+        expNavItems.forEach(i => i.classList.remove('is-active'));
+        expPanels.forEach(p => p.classList.remove('is-active'));
+
+        item.classList.add('is-active');
+        const panel = document.getElementById(target);
+        if (panel) panel.classList.add('is-active');
+      });
+    });
+  }
+
   // ── Skills logos stagger in ───────────────────────────────────────────────
   const skillLogos = document.querySelectorAll('.skills-logos img');
   const skillObserver = new IntersectionObserver(entries => {

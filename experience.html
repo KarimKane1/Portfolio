@@ -39,130 +39,139 @@
 
   <div class="container">
     <section class="section">
+      <div class="exp-layout">
 
-      <!-- Jump Navigation -->
-      <div class="timeline-nav">
-        <span class="timeline-nav-label">Jump to</span>
-        <a href="#disney" class="timeline-nav-pill">Walt Disney World</a>
-        <a href="#rogers" class="timeline-nav-pill">Rogers Corporation</a>
-        <a href="#ginkgo" class="timeline-nav-pill">Ginkgo Bioworks</a>
-      </div>
+        <!-- Left sidebar — company list -->
+        <nav class="exp-nav" aria-label="Experience navigation">
+          <button class="exp-nav-item is-active" data-target="disney">
+            <span class="exp-nav-num">01</span>
+            <span class="exp-nav-company">Walt Disney World</span>
+            <span class="exp-nav-role">Industrial Engineering Intern</span>
+          </button>
+          <button class="exp-nav-item" data-target="rogers">
+            <span class="exp-nav-num">02</span>
+            <span class="exp-nav-company">Rogers Corporation</span>
+            <span class="exp-nav-role">Market Research Analyst Intern</span>
+          </button>
+          <button class="exp-nav-item" data-target="ginkgo">
+            <span class="exp-nav-num">03</span>
+            <span class="exp-nav-company">Ginkgo Bioworks</span>
+            <span class="exp-nav-role">Analyst Intern</span>
+          </button>
+        </nav>
 
-      <!-- Alternating Timeline -->
-      <div class="timeline">
+        <!-- Right content panels -->
+        <div class="exp-content">
 
-        <!-- Walt Disney World — LEFT, most recent -->
-        <div class="timeline-entry entry-left" id="disney">
-          <div class="timeline-entry-card">
-            <div class="experience-block fade-in-up">
-              <h2>The Walt Disney Company</h2>
-              <h3>Industrial Engineering Intern</h3>
-              <div class="experience-content">
-                <h4>What I did</h4>
-                <p>
-                  I worked on analytics and operational improvement projects across several Disney teams,
-                  with most of my focus on Food &amp; Beverage operations. My role was centered on using
-                  data to help teams understand performance, identify friction points, and make faster,
-                  more informed decisions at scale.
-                </p>
-                <h4>Some things I worked on</h4>
-                <ul>
-                  <li>Built and automated dashboards that tracked performance across dozens of quick-service restaurants</li>
-                  <li>Helped replace manual, error-prone reporting with real-time views that operators could actually use</li>
-                  <li>Worked across multiple departments to translate operational and guest data into clear recommendations</li>
-                  <li>Regularly presented insights to stakeholders and leadership to support decision-making</li>
-                </ul>
-                <h4>Why it mattered</h4>
-                <p>
-                  This experience taught me how small improvements compound at scale, and how important
-                  clear storytelling is when using data to influence real operational decisions.
-                </p>
+          <!-- Panel: Walt Disney World -->
+          <div class="exp-panel is-active" id="disney">
+            <div class="exp-panel-header">
+              <div class="exp-panel-logo">
+                <img src="images/disney-logo.png" alt="Walt Disney World" />
+              </div>
+              <div class="exp-panel-meta">
+                <span class="exp-panel-badge">Most Recent</span>
+                <h2>The Walt Disney Company</h2>
+                <span class="eyebrow" style="margin-bottom:0;">Industrial Engineering Intern</span>
+                <span class="exp-panel-counter">01 / 03</span>
               </div>
             </div>
-          </div>
-          <div class="timeline-entry-node">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-entry-aside">
-            <span class="timeline-aside-badge">Most Recent</span>
-          </div>
-        </div>
+            <div class="exp-panel-body">
+              <h4>What I did</h4>
+              <p>
+                I worked on analytics and operational improvement projects across several Disney teams,
+                with most of my focus on Food &amp; Beverage operations. My role was centered on using
+                data to help teams understand performance, identify friction points, and make faster,
+                more informed decisions at scale.
+              </p>
 
-        <!-- Rogers Corporation — RIGHT -->
-        <div class="timeline-entry entry-right" id="rogers">
-          <div class="timeline-entry-aside">
-            <span class="timeline-aside-label">Rogers<br>Corporation</span>
-          </div>
-          <div class="timeline-entry-node">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-entry-card">
-            <div class="experience-block fade-in-up">
-              <h2>Rogers Corporation</h2>
-              <h3>Market Research Analyst Intern</h3>
-              <div class="experience-content">
-                <h4>What I did</h4>
-                <p>
-                  I worked on the market segment team, researching industry trends and customer needs
-                  to help identify opportunities for business expansion. My role combined external
-                  market research with internal data to support strategic growth decisions.
-                </p>
-                <h4>Some things I worked on</h4>
-                <ul>
-                  <li>Researched new markets and customer segments with strong growth potential</li>
-                  <li>Analyzed competitors, industry trends, and sales data to inform expansion strategy</li>
-                  <li>Created clear, data-backed presentations for business and sales teams</li>
-                </ul>
-                <h4>Why it mattered</h4>
-                <p>
-                  This role strengthened how I think about markets, customers, and strategy, especially
-                  how imperfect data still drives real business decisions.
-                </p>
-              </div>
+              <h4>Some things I worked on</h4>
+              <ul>
+                <li>Built and automated dashboards that tracked performance across dozens of quick-service restaurants</li>
+                <li>Helped replace manual, error-prone reporting with real-time views that operators could actually use</li>
+                <li>Worked across multiple departments to translate operational and guest data into clear recommendations</li>
+                <li>Regularly presented insights to stakeholders and leadership to support decision-making</li>
+              </ul>
+
+              <h4>Why it mattered</h4>
+              <p>
+                This experience taught me how small improvements compound at scale, and how important
+                clear storytelling is when using data to influence real operational decisions.
+              </p>
             </div>
           </div>
-        </div>
 
-        <!-- Ginkgo Bioworks — LEFT, first role -->
-        <div class="timeline-entry entry-left" id="ginkgo">
-          <div class="timeline-entry-card">
-            <div class="experience-block fade-in-up">
-              <h2>Ginkgo Bioworks</h2>
-              <h3>Analyst Intern</h3>
-              <div class="experience-content">
-                <h4>What I did</h4>
-                <p>
-                  I worked primarily with the lab management team, focusing on data analysis and
-                  reporting to support day-to-day operations. A lot of my work involved making large,
-                  messy datasets more reliable and useful for the teams working with them.
-                </p>
-                <h4>Some things I worked on</h4>
-                <ul>
-                  <li>Built reporting tools to track lab performance and data quality</li>
-                  <li>Helped identify inconsistencies in testing results and flagged issues early</li>
-                  <li>Shared findings with teams to support operational improvements and optimization efforts</li>
-                </ul>
-                <h4>Why it mattered</h4>
-                <p>
-                  I learned how to bring structure to ambiguous problems and how good analysis can
-                  directly improve how teams operate.
-                </p>
+          <!-- Panel: Rogers Corporation -->
+          <div class="exp-panel" id="rogers">
+            <div class="exp-panel-header">
+              <div class="exp-panel-logo">
+                <img src="images/rogers-logo.png" alt="Rogers Corporation" />
+              </div>
+              <div class="exp-panel-meta">
+                <h2>Rogers Corporation</h2>
+                <span class="eyebrow" style="margin-bottom:0;">Market Research Analyst Intern</span>
+                <span class="exp-panel-counter">02 / 03</span>
               </div>
             </div>
-          </div>
-          <div class="timeline-entry-node">
-            <div class="timeline-dot"></div>
-          </div>
-          <div class="timeline-entry-aside">
-            <span class="timeline-aside-label">First<br>Role</span>
-          </div>
-        </div>
+            <div class="exp-panel-body">
+              <h4>What I did</h4>
+              <p>
+                I worked on the market segment team, researching industry trends and customer needs
+                to help identify opportunities for business expansion. My role combined external
+                market research with internal data to support strategic growth decisions.
+              </p>
 
-        <div class="timeline-end">
-          <div class="timeline-end-dot"></div>
-          <span class="timeline-end-label">Where it started</span>
-        </div>
+              <h4>Some things I worked on</h4>
+              <ul>
+                <li>Researched new markets and customer segments with strong growth potential</li>
+                <li>Analyzed competitors, industry trends, and sales data to inform expansion strategy</li>
+                <li>Created clear, data-backed presentations for business and sales teams</li>
+              </ul>
 
+              <h4>Why it mattered</h4>
+              <p>
+                This role strengthened how I think about markets, customers, and strategy, especially
+                how imperfect data still drives real business decisions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel: Ginkgo Bioworks -->
+          <div class="exp-panel" id="ginkgo">
+            <div class="exp-panel-header">
+              <div class="exp-panel-logo">
+                <img src="images/ginkgo-logo.png" alt="Ginkgo Bioworks" />
+              </div>
+              <div class="exp-panel-meta">
+                <h2>Ginkgo Bioworks</h2>
+                <span class="eyebrow" style="margin-bottom:0;">Analyst Intern</span>
+                <span class="exp-panel-counter">03 / 03</span>
+              </div>
+            </div>
+            <div class="exp-panel-body">
+              <h4>What I did</h4>
+              <p>
+                I worked primarily with the lab management team, focusing on data analysis and
+                reporting to support day-to-day operations. A lot of my work involved making large,
+                messy datasets more reliable and useful for the teams working with them.
+              </p>
+
+              <h4>Some things I worked on</h4>
+              <ul>
+                <li>Built reporting tools to track lab performance and data quality</li>
+                <li>Helped identify inconsistencies in testing results and flagged issues early</li>
+                <li>Shared findings with teams to support operational improvements and optimization efforts</li>
+              </ul>
+
+              <h4>Why it mattered</h4>
+              <p>
+                I learned how to bring structure to ambiguous problems and how good analysis can
+                directly improve how teams operate.
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </div>
