@@ -1021,37 +1021,143 @@ nav a:hover, nav a.active {
   margin: var(--space-16) 0;
 }
 
-/* ===================== AWARD BLOCKS ===================== */
-.award-block {
-  display: grid;
-  grid-template-columns: 190px 1fr;
+/* ===================== AWARD CARDS ===================== */
+.awards-grid {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-8);
+}
+
+.award-card {
   background: var(--bg-card);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-  margin-bottom: var(--space-10);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-2xl);
   border: 1px solid var(--border);
-  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
 }
 
-.award-block:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-5px);
+.award-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
 }
 
-.award-image img {
+/* Thin coloured top strip per category */
+.award-card[data-category="athletic"]    { border-top: 3px solid var(--terra); }
+.award-card[data-category="academic"]    { border-top: 3px solid var(--green); }
+.award-card[data-category="professional"]{ border-top: 3px solid var(--gold);  }
+
+.award-card-inner {
+  padding: var(--space-10);
+  position: relative;
+}
+
+/* Large watermark number */
+.award-num {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-8);
+  font-family: var(--font-heading);
+  font-size: 7rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--border);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Card top row */
+.award-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  position: relative;
+  z-index: 1;
+}
+
+.award-category-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.award-card[data-category="athletic"]     .award-category-tag {
+  background: var(--terra-wash);
+  color: var(--terra);
+  border-color: var(--terra-light);
+}
+.award-card[data-category="academic"]     .award-category-tag {
+  background: var(--green-wash);
+  color: var(--green);
+  border-color: var(--green-light);
+}
+.award-card[data-category="professional"] .award-category-tag {
+  background: var(--gold-light);
+  color: var(--gold);
+  border-color: #e0cc88;
+}
+
+/* Award title */
+.award-name {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+  max-width: 72%;
+  line-height: 1.1;
+}
+
+/* Coloured accent bar under title */
+.award-accent-bar {
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
+.award-card[data-category="athletic"]     .award-accent-bar { background: var(--terra); }
+.award-card[data-category="academic"]     .award-accent-bar { background: var(--green); }
+.award-card[data-category="professional"] .award-accent-bar { background: var(--gold);  }
+
+/* Two-column body */
+.award-body {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: var(--space-8);
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.award-body-text p { margin-bottom: var(--space-4); }
+.award-body-text p:last-child { margin-bottom: 0; }
+
+.award-body-image img {
   width: 100%;
-  height: 140px;
+  height: 190px;
   object-fit: cover;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  display: block;
 }
 
-.award-text h2 {
-  color: var(--text-primary);
-  margin-bottom: var(--space-4);
-  font-size: 1.5rem;
+@media (max-width: 768px) {
+  .award-body { grid-template-columns: 1fr; }
+  .award-name { max-width: 100%; }
+  .award-num  { font-size: 5rem; top: var(--space-3); right: var(--space-5); }
+  .award-card-inner { padding: var(--space-6); }
 }
 
 /* ===================== PROJECT NAV ===================== */
