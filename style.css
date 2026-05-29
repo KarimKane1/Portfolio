@@ -1397,6 +1397,138 @@ nav a:hover, nav a.active {
   .proj-header { padding: var(--space-8); }
 }
 
+/* ===================== ROWING CHAPTERS ===================== */
+.rowing-chapters { padding: var(--space-4) 0; }
+
+.rowing-chapter {
+  position: relative;
+  padding: var(--space-16) 0;
+}
+
+.rowing-chapter + .rowing-chapter {
+  border-top: 1px solid var(--border);
+}
+
+/* Chapter header row */
+.rowing-chapter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.rowing-chapter-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.rowing-scope-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+[data-scope="personal"]  .rowing-scope-badge {
+  background: var(--terra-wash);
+  color: var(--terra);
+  border-color: var(--terra-light);
+}
+[data-scope="community"] .rowing-scope-badge {
+  background: var(--green-wash);
+  color: var(--green);
+  border-color: var(--green-light);
+}
+[data-scope="global"]    .rowing-scope-badge {
+  background: var(--gold-light);
+  color: var(--gold);
+  border-color: #e0cc88;
+}
+
+/* Chapter title */
+.rowing-chapter-title {
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  margin-bottom: var(--space-4);
+  max-width: 640px;
+  line-height: 1.1;
+}
+
+/* Accent bar under title */
+.rowing-accent-bar {
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-8);
+}
+
+[data-scope="personal"]  .rowing-accent-bar { background: var(--terra); }
+[data-scope="community"] .rowing-accent-bar { background: var(--green); }
+[data-scope="global"]    .rowing-accent-bar { background: var(--gold);  }
+
+/* Body text */
+.rowing-chapter-body { max-width: 700px; }
+
+.rowing-chapter-body p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  margin-bottom: var(--space-5);
+  color: var(--text-secondary);
+}
+
+.rowing-chapter-body p:last-child { margin-bottom: 0; }
+
+/* Pull quote */
+.rowing-pullquote {
+  margin: var(--space-8) 0;
+  padding: var(--space-5) var(--space-6);
+  border-left: 3px solid var(--terra);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  background: var(--terra-wash);
+}
+
+[data-scope="community"] .rowing-pullquote {
+  border-left-color: var(--green);
+  background: var(--green-wash);
+}
+[data-scope="global"] .rowing-pullquote {
+  border-left-color: var(--gold);
+  background: var(--gold-light);
+}
+
+.rowing-pullquote p {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Decorative large number — positioned top-right of each chapter */
+.rowing-chapter-num {
+  position: absolute;
+  top: var(--space-12);
+  right: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 12vw, 10rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--border);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
 /* ===================== ROWING GALLERY ===================== */
 .rowing-gallery {
   display: grid;
