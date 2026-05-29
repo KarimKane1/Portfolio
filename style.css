@@ -654,7 +654,7 @@ nav a:hover, nav a.active {
   background: var(--bg-card);
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
   position: sticky;
   top: 73px;
   z-index: 100;
@@ -698,62 +698,97 @@ nav a:hover, nav a.active {
   border-color: var(--terra);
 }
 
+/* ── Alternating timeline ── */
 .timeline {
   position: relative;
-  padding-left: 52px;
 }
 
+/* Center vertical line */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 9px;
-  top: 42px;
-  bottom: 48px;
+  left: 50%;
+  top: 48px;
+  bottom: 72px;
   width: 2px;
-  background: linear-gradient(to bottom, var(--terra) 0%, var(--terra-light) 55%, var(--border) 100%);
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, var(--terra) 0%, var(--terra-light) 60%, var(--border) 100%);
   border-radius: 2px;
+  z-index: 0;
 }
 
 .timeline-entry {
-  position: relative;
-  margin-bottom: var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr 72px 1fr;
+  align-items: start;
+  margin-bottom: var(--space-16);
   scroll-margin-top: 160px;
 }
 
 .timeline-entry:last-child { margin-bottom: 0; }
 
+/* Center node */
+.timeline-entry-node {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
 .timeline-dot {
-  position: absolute;
-  left: -44px;
-  top: var(--space-10);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background: var(--bg);
   border-radius: 50%;
   border: 3px solid var(--terra);
-  box-shadow: 0 0 0 4px var(--terra-wash);
-  z-index: 1;
+  box-shadow: 0 0 0 5px var(--terra-wash);
   transition: all var(--transition-normal);
+  flex-shrink: 0;
 }
 
 .timeline-entry:hover .timeline-dot {
   background: var(--terra);
-  box-shadow: 0 0 0 6px var(--terra-wash), var(--shadow-terra);
-  transform: scale(1.15);
+  box-shadow: 0 0 0 8px var(--terra-wash), var(--shadow-terra);
+  transform: scale(1.2);
 }
 
-.timeline-entry .experience-block {
-  border-left: 1px solid var(--border);
+/* Left card */
+.entry-left .timeline-entry-card  { grid-column: 1; padding-right: var(--space-8); }
+.entry-left .timeline-entry-aside { grid-column: 3; padding-left: var(--space-8); padding-top: calc(var(--space-8) + 4px); }
+
+/* Right card */
+.entry-right .timeline-entry-card  { grid-column: 3; padding-left: var(--space-8); }
+.entry-right .timeline-entry-aside { grid-column: 1; padding-right: var(--space-8); padding-top: calc(var(--space-8) + 4px); text-align: right; }
+
+/* Connector — short horizontal line between card edge and dot */
+.timeline-entry-card { position: relative; }
+
+.entry-left .timeline-entry-card::after {
+  content: '';
+  position: absolute;
+  right: calc(var(--space-8) - var(--space-4));
+  top: calc(var(--space-8) + 9px);
+  width: var(--space-4);
+  height: 1px;
+  background: var(--border-warm);
 }
 
-.timeline-entry .experience-block:hover {
-  transform: translateY(-3px);
+.entry-right .timeline-entry-card::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--space-8) - var(--space-4));
+  top: calc(var(--space-8) + 9px);
+  width: var(--space-4);
+  height: 1px;
+  background: var(--border-warm);
 }
 
-.timeline-badge {
+/* Aside — label area on the non-card side */
+.timeline-aside-badge {
   display: inline-flex;
-  align-items: center;
-  padding: 4px var(--space-3);
+  padding: 5px var(--space-3);
   background: var(--terra);
   color: white;
   border-radius: var(--radius-full);
@@ -761,25 +796,41 @@ nav a:hover, nav a.active {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: var(--space-4);
 }
 
+.timeline-aside-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Experience block overrides inside timeline */
+.timeline-entry .experience-block {
+  border-left: 1px solid var(--border);
+  border-top: 3px solid var(--terra);
+}
+
+.timeline-entry .experience-block:hover { transform: translateY(-4px); }
+
+/* Timeline end */
 .timeline-end {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-3);
-  padding-top: var(--space-6);
-  margin-left: -44px;
+  padding-top: var(--space-8);
 }
 
 .timeline-end-dot {
-  width: 14px;
-  height: 14px;
-  background: var(--border);
+  width: 12px;
+  height: 12px;
+  background: var(--border-warm);
   border-radius: 50%;
-  border: 2px solid var(--border-warm);
+  border: 2px solid var(--border);
   flex-shrink: 0;
-  margin-left: 3px;
 }
 
 .timeline-end-label {
@@ -788,6 +839,43 @@ nav a:hover, nav a.active {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+/* Mobile: collapse to left-aligned single column */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 11px;
+    top: 28px;
+    bottom: 40px;
+    transform: none;
+  }
+
+  .timeline-entry {
+    display: block;
+    padding-left: 44px;
+    position: relative;
+    margin-bottom: var(--space-12);
+  }
+
+  .timeline-entry-node {
+    position: absolute;
+    left: 0;
+    top: var(--space-8);
+    padding-top: 0;
+  }
+
+  .entry-left .timeline-entry-card,
+  .entry-right .timeline-entry-card {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .entry-left .timeline-entry-card::after,
+  .entry-right .timeline-entry-card::after { display: none; }
+
+  .timeline-entry-aside { display: none; }
+
+  .timeline-end { justify-content: flex-start; padding-left: 44px; }
 }
 
 /* ===================== EXPERIENCE BLOCKS ===================== */
